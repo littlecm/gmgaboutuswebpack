@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function AboutUs({ dealership }) {
+const AboutUs = ({ dealership }) => {
   const [dealershipName, setDealershipName] = useState(dealership || 'Our Dealership');
 
   useEffect(() => {
