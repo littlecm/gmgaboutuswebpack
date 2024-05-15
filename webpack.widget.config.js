@@ -1,11 +1,11 @@
 const path = require('path');
 
 module.exports = {
-  entry: ['./widget.js'], // Make sure this is the correct path to your entry file
+  entry: './widget.js', // Ensure this is the correct path to your entry file
   output: {
     path: path.resolve(__dirname, 'public/widget'),
     filename: 'widget-bundle.js',
-    library: 'SpecialsWidget',
+    library: 'AboutUsWidget',
     libraryTarget: 'umd',
     publicPath: '/widget/',
     globalObject: 'this'
