@@ -30,9 +30,6 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx']
-  },
-  externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM'
   }
+  // Remove externals section
 };
