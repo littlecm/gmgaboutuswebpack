@@ -1,7 +1,6 @@
-/* Example Tailwind CSS imports, adjust if you're using other frameworks */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Custom styles */
 .bg-white {
@@ -16,78 +15,4 @@
   color: #3b82f6; /* Example primary color */
 }
 
-.text-gray-900 {
-  color: #1a202c;
-}
-
-.text-gray-50 {
-  color: #f9fafb;
-}
-
-.text-gray-500 {
-  color: #6b7280;
-}
-
-.dark\\:text-gray-50 {
-  color: #f9fafb;
-}
-
-.dark\\:text-gray-400 {
-  color: #9ca3af;
-}
-
-.font-bold {
-  font-weight: 700;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-}
-
-.rounded-lg {
-  border-radius: 0.5rem;
-}
-
-.shadow-lg {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-.p-6 {
-  padding: 1.5rem;
-}
-
-.sm\\:p-8 {
-  padding: 2rem;
-}
-
-.flex {
-  display: flex;
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
-.items-center {
-  align-items: center;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
-
-.list-disc {
-  list-style-type: disc;
-}
-
-.list-inside {
-  list-style-position: inside;
-}
+/* Add any other custom styles as needed */
