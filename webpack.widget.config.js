@@ -1,6 +1,8 @@
-const path = require('path');
+import path from 'path';
+import { Configuration } from 'webpack';
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
-module.exports = {
+const config: Configuration = {
   entry: './widget.js', // Ensure this is the correct path to your entry file
   output: {
     path: path.resolve(__dirname, 'public/widget'),
@@ -23,16 +25,27 @@ module.exports = {
         }
       },
       {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: 'ts-loader'
+      },
+      {
         test: /\.css$/,
         use: [
           'style-loader',
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: { importLoaders: 1 }
+          },
           'postcss-loader'
         ]
       }
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    plugins: [new TsconfigPathsPlugin()]
   }
 };
+
+export default config;
