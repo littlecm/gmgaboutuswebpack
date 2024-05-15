@@ -18,81 +18,82 @@ const AboutUs = ({ dealership }) => {
   }, [dealership]);
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-8 dark:bg-gray-900 transition-colors duration-300">
-      <div className="flex flex-col items-center text-center space-y-6">
+    <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8 sm:p-12 transition-colors duration-300">
+      <div className="flex flex-col items-center text-center space-y-8">
         <div className="mb-6">
-          <CarIcon className="h-12 w-12 text-indigo-600" />
+          <CarIcon className="h-16 w-16 text-indigo-600" />
         </div>
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white">{dealershipName}</h2>
-        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+        <h2 className="text-4xl font-bold text-gray-900 dark:text-white">{dealershipName}</h2>
+        <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
           {dealershipName} is proud to be part of the Garber Automotive Group. Whether you’re looking for a new or quality used vehicle, our knowledgeable sales staff is here to help you. We offer assistance with vehicle financing and auto loans to ensure you bring your dream car home today. We also have a state-of-the-art service center and certified service technicians to handle all your vehicle’s repair and maintenance needs.
         </p>
-        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+        <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
           Garber Automotive Group has been family owned and operated since 1907. Garber Management Group, based out of Saginaw, Michigan, is the umbrella organization for 21 new-car dealerships that represent 16 franchises across six states and is currently one of the top 20 largest privately held companies in Michigan outside of Detroit.
         </p>
-        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+        <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
           The Garber organization also includes Gateway Financial Solutions, one of the nation’s largest used-vehicle lenders, and RightWay Automotive, an independent used-vehicle retailer with over 35 locations in the Midwest. In total, the organization employs over 2,000 people and generates $1.2 billion in annual sales.
         </p>
-        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+        <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
           Since 1907, we’ve been in the business of creating a customer experience that has brought customers back time and time again. That’s why we always say, “You’ll do better at {dealershipName}!” With a knowledgeable and experienced staff, wide selection of new and used vehicles, and easy financing, {dealershipName} is your one-stop shop for all your vehicle needs. Call us today or visit us at our dealership.
         </p>
-        <SectionTitle title="VISION STATEMENT" />
-        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">“To be the BEST automotive sales and repair operation in every market we serve.”</p>
-        <SectionTitle title="MISSION STATEMENT" />
-        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">“We’re only doing our jobs when we create an experience for the customers for which they choose to return and do business with us again.”</p>
-        <SectionTitle title="COMPANY VALUES" />
-        <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 leading-relaxed">
-          <li>Honesty: Truthful at all times.</li>
-          <li>Respect: To show consideration and honor for each other.</li>
-          <li>Empathy: To be able to understand another’s position.</li>
-          <li>Integrity: To be of good sound moral principle, trustworthy, sincere.</li>
-          <li>Pride: Sense of self-worth. Making a difference in people’s lives.</li>
-          <li>Work Ethic: Working as a team to meet or exceed expectations.</li>
-        </ul>
-        <SectionTitle title="HISTORY OF THE COMPANY" />
-        <HistoryText />
+        <Section title="VISION STATEMENT" content="“To be the BEST automotive sales and repair operation in every market we serve.”" />
+        <Section title="MISSION STATEMENT" content="“We’re only doing our jobs when we create an experience for the customers for which they choose to return and do business with us again.”" />
+        <Section title="COMPANY VALUES" content={
+          <ul className="list-disc list-inside space-y-2 text-lg text-gray-600 dark:text-gray-300">
+            <li>Honesty: Truthful at all times.</li>
+            <li>Respect: To show consideration and honor for each other.</li>
+            <li>Empathy: To be able to understand another’s position.</li>
+            <li>Integrity: To be of good sound moral principle, trustworthy, sincere.</li>
+            <li>Pride: Sense of self-worth. Making a difference in people’s lives.</li>
+            <li>Work Ethic: Working as a team to meet or exceed expectations.</li>
+          </ul>
+        } />
+        <Section title="HISTORY OF THE COMPANY" content={<HistoryText />} />
       </div>
     </div>
   );
 };
 
-const SectionTitle = ({ title }) => (
-  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mt-6">{title}</h3>
+const Section = ({ title, content }) => (
+  <div className="w-full">
+    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mt-8">{title}</h3>
+    <div className="mt-4 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{content}</div>
+  </div>
 );
 
 const HistoryText = () => (
   <>
-    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+    <p className="mt-4">
       The year was 1907 and many thought the horse and buggy would continue to be the way to travel. One notable exception was a young farm implement salesman of exceptional ability and bold vision. His name was Guy S. Garber and he saw the automobile as the vehicle of the future.
     </p>
-    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+    <p className="mt-4">
       Garber’s reputation for sales caught the eye of Billy Durant, founder of General Motors. At Durant’s encouragement, Guy became a traveling sales representative for Buick at age 23. His job was to establish a retail network, opening dealerships in Battle Creek and Saginaw. In 1910, Buick withdrew from Saginaw due to a lack of resources. Guy, along with a partner, bought Buick’s interest, establishing Garber Buick Company.
     </p>
-    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+    <p className="mt-4">
       Garber Buick grew to become a GM model for salesmanship, efficiency, and customer service, a legacy that has continued with his successors. Guy was rewarded by being granted one of only 13 distributorships in the U.S., allowing him to wholesale Buick products and parts to dealerships from Saginaw to the Straits of Mackinac.
     </p>
-    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+    <p className="mt-4">
       Guy was a compassionate and charitable man, making service to the community a priority in his life. He founded the Saginaw Society for Crippled Children, was one of the original organizers of the United Way, built the Garber Tennis Courts, and served on the Saginaw City School Board, to name a few.
     </p>
-    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+    <p className="mt-4">
       His long and productive affiliation with GM lasted nearly 60 years, through the Great Depression and two World Wars. When automotive pioneer Guy Garber died in 1965, the world lost a significant member of automotive history.
     </p>
-    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+    <p className="mt-4">
       Richard Garber Sr., son of Guy Garber and who had been actively managing Garber Buick Company, became president and owner until his death in 1972. Like his father, Richard was a civic leader in every sense of the word. Richard Garber was succeeded by Norman F. Geyer as president. Norm was married to Maxine Garber and was Guy Garber’s son-in-law. He successfully guided the Buick store for eight years, during the trying times of the 1970’s, until he passed the torch to Richard J. Garber Jr., in 1980.
     </p>
-    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+    <p className="mt-4">
       Guy S. Garber’s grandson, Richard J. Garber, Jr., was the third generation to take the helm of the company in its 73rd year of operation. When he became president, he was the youngest Buick dealer for a dealership of its size in the nation.
     </p>
-    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+    <p className="mt-4">
       With Garber Buick enjoying outstanding sales and service performance, it became Dick Garber’s objective to acquire additional dealerships and grow the organization. The first acquisition was in 1986, with Garber Nissan in Saginaw, Michigan, and as of 2020 the organization has grown to include 21 new car dealerships, RightWay Automotive, an independent used vehicle retailer with over 35 locations, and Gateway Financial Solutions, a subprime lending company.
     </p>
-    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+    <p className="mt-4">
       Richard J. Garber Jr. shares his family’s commitment to the community. He has served on the board of directors for numerous charitable and community organizations in the Great Lakes Bay Region, and has led three capital campaigns for regional organizations including the YMCA, the CAN Council, and the Temple Theatre. Under his leadership, the Garber organization gives back over $1 million to community organizations every year.
     </p>
-    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+    <p className="mt-4">
       Giving back to the community is part of the culture of the company and Garber employees dedicate thousands of community service hours each year to local organizations. In 2002, Garber also bought an OHL franchise, the Saginaw Spirit as a contribution to the region, which plays at the Dow Event Center in Saginaw.
     </p>
-    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+    <p className="mt-4">
       The organization today is a long way from the 1907 version, but important traditions live on: dedication to service, customers, and community, a loyal staff, and a forward-looking vision. One that echoes the spirit of a young farm implement salesman who took thousands of Mid-Michigan residents out of the buggy and put them behind the wheel.
     </p>
   </>
@@ -103,8 +104,6 @@ function CarIcon(props) {
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
