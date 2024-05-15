@@ -31,5 +31,4 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx']
   }
-  // Remove externals section
 };
