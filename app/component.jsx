@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-export default function AboutUs({ dealership }) {
+function AboutUs({ dealership }) {
   const [dealershipName, setDealershipName] = useState(dealership || 'Our Dealership');
 
   useEffect(() => {
@@ -113,3 +113,5 @@ function CarIcon(props) {
     </svg>
   );
 }
+
+export default AboutUs;
