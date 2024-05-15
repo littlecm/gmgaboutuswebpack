@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
-export default function AboutUs({ dealership }: { dealership: string }) {
+export default function AboutUs({ dealership }) {
   const [dealershipName, setDealershipName] = useState(dealership || 'Our Dealership');
 
   useEffect(() => {
-    const dealershipMap: { [key: string]: string } = {
+    const dealershipMap = {
       'abcmotors.com': 'ABC Motors',
       'xyzautos.com': 'XYZ Autos',
       'updatingspecials2024.vercel.app': 'It Worked Motors',
@@ -92,7 +92,7 @@ export default function AboutUs({ dealership }: { dealership: string }) {
   );
 }
 
-function CarIcon(props: React.SVGProps<SVGSVGElement>) {
+function CarIcon(props) {
   return (
     <svg
       {...props}
